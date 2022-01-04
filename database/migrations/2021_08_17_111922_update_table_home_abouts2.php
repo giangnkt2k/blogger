@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class UpdateTableHomeAbouts2 extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('home_abouts', function (Blueprint $table) {
+
+            $table->dropColumn('choice');
+        });
+
+        Schema::table('home_abouts', function (Blueprint $table) {
+
+            $table->boolean('choice')->default(false);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+}
